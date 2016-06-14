@@ -57,7 +57,7 @@
         </div>
     {{/if}}
 
-    <div class="container posts {{siteSettings.enable_sidebar:with-sidebar}}">
+    <div class="container posts with-sidebar">
         <div class='selected-posts {{unless multiSelect 'hidden'}}'>
             {{partial "selected-posts"}}
         </div>
@@ -139,6 +139,11 @@
         </div>
 
     </div>
+    {{#if siteSettings.enable_sidebar}}
+      <div class='sidebar'>
+        {{{siteSettings.sidebar_content}}}
+      </div>
+    {{/if}}
 {{else}}
     <div class="container">
         {{#conditional-loading-spinner condition=noErrorYet}}
@@ -165,10 +170,4 @@
 
 {{#if currentUser.enable_quoting}}
     {{render "quote-button"}}
-{{/if}}
-
-{{#if siteSettings.enable_sidebar}}
-  <div class='sidebar'>
-    {{{siteSettings.sidebar_content}}}
-  </div>
 {{/if}}
