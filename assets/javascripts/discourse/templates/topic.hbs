@@ -57,7 +57,7 @@
         </div>
     {{/if}}
 
-    <div {{bind-attr class=":container loading:hidden siteSettings.enable_sidebar:with-sidebar"}}>
+    <div {{bind-attr class=":container :posts loading:hidden siteSettings.enable_sidebar:with-sidebar"}}>
         <div class='selected-posts {{unless multiSelect 'hidden'}}'>
             {{partial "selected-posts"}}
         </div>
