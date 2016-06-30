@@ -1,0 +1,56 @@
+{{#if link}}
+    <h3>{{shareTitle}}</h3>
+
+    {{#if date}}
+        <span class="date">{{displayDate}}</span>
+    {{/if}}
+
+    <div>
+        <input type='text'>
+        <div class="share-for-touch">
+            <div class="overflow-ellipsis">
+                <a></a>
+            </div>
+        </div>
+    </div>
+    <div id="share-buttons">
+        <!-- Email -->
+        <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com">
+            <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+        </a>
+
+        <!-- Facebook -->
+        <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+        </a>
+
+        <!-- Google+ -->
+        <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+        </a>
+        <!-- Twitter -->
+        <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+        </a>
+
+    </div>
+
+    {{#each sources as |s|}}
+        {{share-source source=s title=title action="share"}}
+    {{/each}}
+
+    {{#if canReplyAsNewTopic}}
+        <div class='reply-as-new-topic'>
+            <a href {{action "replyAsNewTopic"}} aria-label='{{i18n 'post.reply_as_new_topic'}}' title='{{i18n 'post.reply_as_new_topic'}}'>{{fa-icon "plus"}}{{i18n 'topic.create'}}</a>
+        </div>
+    {{/if}}
+
+    <div class='link'>
+        <a href {{action "close"}} aria-label='{{i18n 'share.close'}}' title='{{i18n 'share.close'}}'>{{fa-icon "close"}}</a>
+    </div>
+{{/if}}
