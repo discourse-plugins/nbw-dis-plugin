@@ -140,9 +140,9 @@
 
     </div>
     {{#if siteSettings.enable_sidebar}}
-        <div class='sidebar'>
-            {{{siteSettings.sidebar_content}}}
-        </div>
+      <div class='sidebar'>
+        {{{siteSettings.sidebar_content}}}
+      </div>
     {{/if}}
 {{else}}
     <div class="container">
@@ -166,14 +166,7 @@
     </div>
 {{/if}}
 
-
-
 {{render "share"}}
-
-
-
-
-
 
 {{#if currentUser.enable_quoting}}
     {{render "quote-button"}}
